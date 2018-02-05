@@ -32,6 +32,7 @@ class Main extends Component {
 			key={article._id}
 			title={article.headline.main}
 			pub_date={article.pub_date}
+			author={article.author}
 			snippet={article.snippet}
 			url={article.web_url}
 			handleSaveButton={this.handleSaveButton}
@@ -47,6 +48,7 @@ class Main extends Component {
 			key={save._id}
 			title={save.headline.main}
 			pub_date={save.pub_date}
+			author={save.author}
 			snippet={save.snippet}
 			url={save.web_url}
 			handleDeleteButton={this.handleDeleteButton}
@@ -83,8 +85,7 @@ class Main extends Component {
 	handleSaveButton = (id) => {
 		const findArticleByID = this.state.articles.find((el) => el._id === id);
 		console.log("findArticleByID: ", findArticleByID);
-		console.log(findArticleByID.byline.original)
-		const newSave = {title: findArticleByID.headline.main, author: findArticleByID.byline.original, pub_date: findArticleByID.pub_date, snippet: findArticleByID.snippet, url: findArticleByID.web_url};
+		const newSave = {title: findArticleByID.headline.main, pub_date: findArticleByID.pub_date, snippet: findArticleByID.snippet, url: findArticleByID.web_url};
 		API.saveArticles(newSave)
 			.then(this.getSavedArticles());
 	}
