@@ -43,14 +43,13 @@ class Main extends Component {
 
 	renderSaved = () => {
 		return this.state.saved.map(save => (
-		<Results
+		<Saved
 			_id={save._id}
 			key={save._id}
-			title={save.headline.main}
+			title={save.title}
 			pub_date={save.pub_date}
-			author={save.author}
 			snippet={save.snippet}
-			url={save.web_url}
+			url={save.url}
 			handleDeleteButton={this.handleDeleteButton}
 			getSavedArticles={this.getSavedArticles}
 		/>
