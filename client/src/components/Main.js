@@ -119,8 +119,7 @@ class Main extends Component {
 		                <div className="panel panel-primary">
 		                  <div className="panel-heading">
 		                    <h3 className="panel-title">
-		                      <strong>
-		                        <i className="fa fa-download" aria-hidden="true"></i> Saved Articles</strong>
+		                      <strong><i className="fa fa-download" aria-hidden="true"></i> Saved Articles</strong>
 		                    </h3>
 		                  </div>
 		                  <div className="panel-body">
