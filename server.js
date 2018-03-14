@@ -37,7 +37,15 @@ app.use((req, res, next) => {
 
 // Database Configuration with Mongoose
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/MongoNewsScraper" );
+var databaseUri = "mongodb://localhost/MongoNewsScraper";
+
+if (process.env.MONGODB_URI) {
+	mongoose.connect(process.env.MONGODB_URI);	
+} else {
+	mongoose.connect(databaseUri)
+}
+
+
 var db = mongoose.connection;
 
 db.on("error", function(error) {
