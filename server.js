@@ -9,16 +9,15 @@ var routes = require('./routes');
 
 // Instantiation
 
-var port = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 mongoose.Promise = bluebird;
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(express.static("client/build"));
+// Serve up static assets if in production (running on Heroku)
 app.use(routes);
 
-// Serve up static assets if in production (running on Heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 } else {
