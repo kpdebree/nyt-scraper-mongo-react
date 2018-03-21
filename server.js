@@ -12,7 +12,7 @@ var routes = require('./routes');
 var PORT = process.env.PORT || 3001;
 mongoose.Promise = bluebird;
 var app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Serve up static assets if in production (running on Heroku)
@@ -20,8 +20,6 @@ app.use(routes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-} else {
-  app.use(express.static(__dirname + "/client/public"));
 }
 
 // enable CORS, use:
