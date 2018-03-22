@@ -11,13 +11,10 @@
     "build": "node scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "9.4.0arn"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^3.5.0",
+    "concurrently": "^3.5.1",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
